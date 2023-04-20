@@ -22,7 +22,7 @@ jobs:
         id: cache-docker-layers
         uses: actions/cache@v3
         with:
-          path: Azure/static-web-apps-deploy@v1
+          path: /home/runner/work/_actions/Azure/static-web-apps-deploy/v1
           key: ${{ runner.os }}-docker-${{ hashFiles('**/Dockerfile') }}
           restore-keys: |
             ${{ runner.os }}-docker-
