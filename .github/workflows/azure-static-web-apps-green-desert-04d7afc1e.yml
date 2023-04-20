@@ -18,6 +18,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
+      - name: Cache Docker image layers
+        id: cache-docker-layers
+        uses: actions/cache@v3
+        with:
+          path: /var/lib/docker
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/Dockerfile') }}
+          restore-keys: |
+            ${{ runner.os }}-docker-
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
