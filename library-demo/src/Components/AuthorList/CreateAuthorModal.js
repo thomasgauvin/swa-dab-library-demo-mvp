@@ -25,6 +25,11 @@ function CreateAuthorModal({ showModal, setShowModal, refetch }) {
         onCompleted() {
             setShowModal(false);
             refetch();
+        },
+        context: {
+            headers: {
+                'X-MS-API-ROLE' : 'admin'
+            }
         }
     });
 

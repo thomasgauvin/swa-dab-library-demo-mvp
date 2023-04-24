@@ -39,8 +39,10 @@ function AuthorList() {
     });
     const [deleteAuthor] = useMutation(DELETE_AUTHOR, {
         onCompleted: () => refetch(),
-        headers: {
-            'X-MS-API-ROLE' : 'admin'
+        context: {
+            headers: {
+                'X-MS-API-ROLE' : 'admin'
+            }
         }
     });
 
