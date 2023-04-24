@@ -45,8 +45,8 @@ function App() {
         </Navbar>
 
         <div className="maxWidth1200Centered">
-          <BookList/>
           <AuthorList/>
+          <BookList/>
         </div>
       </div>
     </ApolloProvider>
